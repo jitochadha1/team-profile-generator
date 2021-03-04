@@ -1,5 +1,5 @@
 ![alt text](https://img.icons8.com/material-sharp/2x/software-license.png)
-# Professional README Generator
+# Team Profile Generator
 
 https://github.com/jitochadha1/team-profile-generator.git
 ## Description
@@ -16,7 +16,7 @@ An application that enables you to build out a html file showing your team membe
 - [Questions](#questions)
 
 ## Installation
-navigate to the desired installation directory and type "git clone https://github.com/jitochadha1/team-profile-generator.git"
+navigate to the desired installation directory and type "git clone https://github.com/jitochadha1/team-profile-generator.git" and then run "npm install" and the run "npm i jest" 
 ## Usage
 upon running the command "npm start" answer the questions about your team memebr's information and then select "finish building team" option once finished to see the html page consisting of your team
 ## Credits
