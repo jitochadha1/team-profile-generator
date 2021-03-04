@@ -1,84 +1,16 @@
-const inquirer = require("inquirer");
+const Program = require('./lib/Program');
 
-const writeToFile = require("./lib//writeToFile");
-const generateHTML = require("./lib//generateHTML");
+new Program();
 
-const team = {
-    interns: [],
-    engineers: []
-};
+/*
+const Manager = require('./lib/classes/Manager');
+const Engineer = require('./lib/classes/Engineer');
+const Intern = require('./lib/classes/Intern');
+//const p = new Program();
+/*const team = {
+    manager: new Manager(1, 2, 3, 4),
+    interns: [new Intern(1010, 1010, 1010, 1010), new Intern(1010, 1010, 1010, 1010)],
+    engineers: [new Engineer(9631, 9631, 9631, 9631), new Engineer(9631, 9631, 9631, 9631)]
+};*/
 
-finishProgram(team);
-
-const menuQuestion = {
-    type: 'list',
-    message: 'You can add an engineer, an intern or finish the team',
-    name: 'action',
-    choices: ['Engineer', 'Intern', 'Finish building team']
-};
-
-const basicQuestions = () => ([{
-    type: 'text',
-    message: 'Name?',
-    name: 'name',
-}, {
-    type: 'text',
-    message: 'ID?',
-    name: 'id',
-}, {
-    type: 'text',
-    message: 'Email?',
-    name: 'email',
-}]);
-
-const questions = {
-    teamManager: [...basicQuestions(), {
-        type: 'text',
-        message: 'Office number?',
-        name: 'officeNumber',
-    }],
-    engineer: [...basicQuestions(), {
-        type: 'text',
-        message: 'Github username?',
-        name: 'githubUserName',
-    }],
-    intern: [...basicQuestions(), {
-        type: 'text',
-        message: 'School?',
-        name: 'school',
-    }]
-};
-
-inquirer.prompt(questions.teamManager).then(answers => {
-    const { name, id, email, officeNumber } = answers;
-    console.log(name, id, email, officeNumber);
-
-    team.manager = answers;
-
-    showMenu();
-});
-
-function finishProgram(team) {
-    console.log('This is the team:', team);
-    writeToFile('team.html', generateHTML(team));
-}
-
-function showMenu() {
-    inquirer.prompt(menuQuestion).then(({ action }) => {
-        console.log('Answer:', action);
-
-        if (action === 'Engineer') {
-            inquirer.prompt(questions.engineer).then(answers => {
-                team.engineers.push(answers);
-                showMenu();
-            });
-        } else if (action === 'Intern') {
-            inquirer.prompt(questions.intern).then(answers => {
-                team.interns.push(answers);
-                showMenu();
-            });
-        } else {
-            finishProgram(team);
-        }
-    });
-}
+// p.finishProgram(team)*/
